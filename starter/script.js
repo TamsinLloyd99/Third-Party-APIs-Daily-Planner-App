@@ -8,10 +8,27 @@ var todaysDate = dayjs().format("dddd, MMMM DD");
 $("#currentDay").text(todaysDate);
 
 
-function pageLoad (){
-//display current date at top of page
-//create timeblocks for standard business hours
+
+$(document).ready(function(){
+    var containerEL = $('.container');
+    for (let i = 9; i <= 17; i++) {
+        var timeBlock = `
+        <div class="row time-block">
+            <div class="hour">${i}:00</div>
+            <div class="description"></div>
+            <button class="saveBtn"><i class="fas fa-save"></i></button>
+        </div>
+        `;
+        containerEL.append(timeBlock);
+    
 }
+
+// $('.row').css('display', 'flex');
+console.log("Page loaded");
+});
+//create timeblocks for standard business hours
+
+
 
 function colorBlock (){
     //Color-code each timeblock based on past, present, and future when the timeblock is viewed.
