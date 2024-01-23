@@ -22,11 +22,9 @@ header {
   padding: 60px;
 }
 
-.description {
-  white-space: pre-wrap;
-}
-
 .time-block {
+  display: flex;
+  /* justify-content: center; */
   text-align: center;
   border-radius: 15px;
 }
@@ -38,9 +36,15 @@ header {
 }
 
 .hour {
+  flex: 0.25;
   background-color: #ffffff;
   color: #000000;
   border-top: 1px dashed #000000;
+}
+
+.description {
+  flex: 3;
+  white-space: pre-wrap;
 }
 
 .past {
@@ -59,6 +63,7 @@ header {
 }
 
 .saveBtn {
+  flex: 0.25;
   border-left: 1px solid black;
   border-top-right-radius: 15px;
   border-bottom-right-radius: 15px;
