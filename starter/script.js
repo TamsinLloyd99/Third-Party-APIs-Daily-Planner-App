@@ -15,7 +15,7 @@ $(document).ready(function(){
         var timeBlock = `
         <div class="row time-block">
             <div class="hour">${i}:00</div>
-            <div class="description"></div>
+            <div class="description" contenteditable="true"></div>
             <button class="saveBtn"><i class="fas fa-save"></i></button>
         </div>
         `;
@@ -57,9 +57,13 @@ if (time < currentHour) {
 var saveBtn = $('.saveBtn');
 
 function saveNotes (){
-    
+var userInput = $('.description').text;
+localStorage.setItem('userInput', userInput);
+$('.pop-up').addClass('show');
+$('.pop-up').text("Your notes have been saved");
 }
 
+var notes = localStorage.getItem('userInput');
 saveBtn.on('click', saveNotes);
 //event listener - function
 //allows a user to enter an event when they click a timeblock
