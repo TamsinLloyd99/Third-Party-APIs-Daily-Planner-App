@@ -54,8 +54,13 @@ if (time < currentHour) {
 });
 }
 
+var saveBtn = $('.saveBtn');
 
+function saveNotes (){
+    
+}
 
+saveBtn.on('click', saveNotes);
 //event listener - function
 //allows a user to enter an event when they click a timeblock
 //saves the event in local storage when the save button is clicked in that timeblock.
