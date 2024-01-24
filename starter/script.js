@@ -20,20 +20,41 @@ $(document).ready(function(){
         </div>
         `;
         containerEL.append(timeBlock);
+        colorBlock();
     
 }
 
-// $('.row').css('display', 'flex');
 console.log("Page loaded");
 });
 //create timeblocks for standard business hours
 
 
+var currentDate = new Date();
+// console.log(currentDate);
+var currentHour = currentDate.getHours();
+console.log(currentHour);
 
 function colorBlock (){
+    $('.time-block').each(function(){
+var time = parseInt($(this).find('.hour').text());
+console.log(time);
+
+if (time < currentHour) {
+    $(this).addClass('past');
+} else if (time === currentHour) {
+    $(this).removeClass('past');
+    $(this).addClass('present');
+} else {
+    $(this).removeClass('past');
+    $(this).removeClass('present');
+    $(this).addClass('future');
+}
     //Color-code each timeblock based on past, present, and future when the timeblock is viewed.
     //using jquery to change css properties
+});
 }
+
+
 
 //event listener - function
 //allows a user to enter an event when they click a timeblock
