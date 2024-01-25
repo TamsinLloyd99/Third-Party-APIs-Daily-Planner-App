@@ -85,6 +85,12 @@ $('.pop-up').css({
 
 var notes = JSON.parse(localStorage.getItem('userInput'));
 
+$('.refresh').on('click', function(){
+    localStorage.clear();
+    location.reload();
+})
+
+
 //event listener - function
 //allows a user to enter an event when they click a timeblock
 //saves the event in local storage when the save button is clicked in that timeblock.
