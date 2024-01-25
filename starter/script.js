@@ -76,7 +76,11 @@ function saveNotes (){
 })
 localStorage.setItem('userInput', JSON.stringify(timeBlockInput)); //saves the data in local storage as a string (timeBlockValue);
 $('.pop-up').addClass('show');
-$('.pop-up').text("Your notes have been saved");
+$('.pop-up').text("Your notes have been saved!");
+$('.pop-up').css({
+    'color': 'green',
+    'background': 'lightgreen',
+  });
 }
 
 var notes = JSON.parse(localStorage.getItem('userInput'));

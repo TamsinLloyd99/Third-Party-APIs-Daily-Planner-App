@@ -45,6 +45,9 @@ header {
 .description {
   flex: 3;
   white-space: pre-wrap;
+  color: #000000;
+  justify-content: center;
+  
 }
 
 /* .event-input {
