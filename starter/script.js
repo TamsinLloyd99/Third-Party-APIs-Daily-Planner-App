@@ -20,8 +20,11 @@ $(document).ready(function(){
         </div>
         `;
         containerEL.append(timeBlock);
+        var saveBtn = $('.saveBtn');
+        console.log(saveBtn);
+        saveBtn.on('click', saveNotes);
         colorBlock();
-    
+        
 }
 
 console.log("Page loaded");
@@ -61,7 +64,8 @@ if (time < currentHour) {
 });
 }
 
-var saveBtn = $('.saveBtn');
+
+
 
 function saveNotes (){
     let timeBlockInput = [];
@@ -69,14 +73,14 @@ function saveNotes (){
         let timeBlockValue = $(this).text();
         timeBlockInput.push(timeBlockValue);
         console.log(timeBlockValue);
-      })
+})
 localStorage.setItem('userInput', JSON.stringify(timeBlockInput)); //saves the data in local storage as a string (timeBlockValue);
 $('.pop-up').addClass('show');
 $('.pop-up').text("Your notes have been saved");
 }
 
 var notes = JSON.parse(localStorage.getItem('userInput'));
-saveBtn.on('click', saveNotes);
+
 //event listener - function
 //allows a user to enter an event when they click a timeblock
 //saves the event in local storage when the save button is clicked in that timeblock.
