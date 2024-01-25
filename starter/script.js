@@ -25,6 +25,13 @@ $(document).ready(function(){
 }
 
 console.log("Page loaded");
+
+var savedNotes = JSON.parse(localStorage.getItem('userInput'));
+if (savedNotes){
+    $('.description').each(function(index){
+        $(this).text(savedNotes[index])
+    })
+}
 });
 //create timeblocks for standard business hours
 
@@ -57,13 +64,18 @@ if (time < currentHour) {
 var saveBtn = $('.saveBtn');
 
 function saveNotes (){
-var userInput = $('.description').text;
-localStorage.setItem('userInput', userInput);
+    let timeBlockInput = [];
+    $('.description').each(function() {
+        let timeBlockValue = $(this).text();
+        timeBlockInput.push(timeBlockValue);
+        console.log(timeBlockValue);
+      })
+localStorage.setItem('userInput', JSON.stringify(timeBlockInput)); //saves the data in local storage as a string (timeBlockValue);
 $('.pop-up').addClass('show');
 $('.pop-up').text("Your notes have been saved");
 }
 
-var notes = localStorage.getItem('userInput');
+var notes = JSON.parse(localStorage.getItem('userInput'));
 saveBtn.on('click', saveNotes);
 //event listener - function
 //allows a user to enter an event when they click a timeblock
