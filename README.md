@@ -21,3 +21,8 @@ Allow a user to enter an event when they click a timeblock.
 Save the event in local storage when the save button is clicked in that timeblock.
 
 Persist events between refreshes of a page.
+
+<img width="956" alt="image" src="https://github.com/TamsinLloyd99/Third-Party-APIs-Daily-Planner-App/assets/152029548/269a9e88-307d-453e-a8ee-c16038a88985">
+
+
+Deployed link: https://tamsinlloyd99.github.io/Third-Party-APIs-Daily-Planner-App/starter/
